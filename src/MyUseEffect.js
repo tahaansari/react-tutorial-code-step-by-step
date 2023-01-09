@@ -5,7 +5,7 @@ function MyUseEffect({ data, counter }) {
   //   console.log("Called with data state");
   // }, [data]);
   useEffect(() => {
-    alert("counter is " + counter);
+    // alert("counter is " + counter);
   }, [counter, data]);
 
   return (
