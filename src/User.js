@@ -1,14 +1,25 @@
-const User = () => {
+const User = (props) => {
+  console.log(props.data);
+  const data = "user data";
   return (
     <>
-      <span style={{ padding: "1rem", backgroundColor: "gray", display: "inline-block", border: "1px solid white" }}>
-        Name
+      <span
+        onClick={() => props.showAlert(data)}
+        style={{ padding: "1rem", backgroundColor: "gray", display: "inline-block", border: "1px solid white" }}
+      >
+        {props.data.name}
       </span>
-      <span style={{ padding: "1rem", backgroundColor: "gray", display: "inline-block", border: "1px solid white" }}>
-        Age
+      <span
+        onClick={() => props.showAlert(data)}
+        style={{ padding: "1rem", backgroundColor: "gray", display: "inline-block", border: "1px solid white" }}
+      >
+        {props.data.age}
       </span>
-      <span style={{ padding: "1rem", backgroundColor: "gray", display: "inline-block", border: "1px solid white" }}>
-        Gender
+      <span
+        onClick={() => props.showAlert(data)}
+        style={{ padding: "1rem", backgroundColor: "gray", display: "inline-block", border: "1px solid white" }}
+      >
+        {props.data.gender}
       </span>
     </>
   );
