@@ -1,22 +1,19 @@
-import React, { Component, useState, createRef } from "react";
+import React, { useRef } from "react";
+import User from "./User";
 
-class App extends Component {
-  constructor() {
-    super();
-    console.log("constructor function in app.js component");
-    this.inputRef = createRef();
+function App() {
+  let inputRef = useRef(null);
+  function changeValue() {
+    console.log("change value called");
+    // inputRef.current.value = "Hello World";
   }
-  componentDidMount() {
-    console.log((this.inputRef.current.value = "10000"));
-  }
-  render() {
-    return (
-      <div className="App" style={{ textAlign: "center" }}>
-        <h1>Ref in React</h1>
-        <input type="text" defaultValue="10" ref={this.inputRef} />
-      </div>
-    );
-  }
+  return (
+    <div className="App" style={{ textAlign: "center" }}>
+      <h1>forwardRef in React Hook</h1>
+      <User ref={inputRef} />
+      <button onClick={changeValue}>submit</button>
+    </div>
+  );
 }
 
 export default App;
