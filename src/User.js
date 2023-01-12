@@ -1,4 +1,4 @@
-import React, { forwardRef } from "react";
+import React from "react";
 
 function User(props, ref) {
   return (
@@ -8,4 +8,4 @@ function User(props, ref) {
   );
 }
 
-export default User;
+export default React.forwardRef(User);

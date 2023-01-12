@@ -5,7 +5,7 @@ function App() {
   let inputRef = useRef(null);
   function changeValue() {
     console.log("change value called");
-    // inputRef.current.value = "Hello World";
+    inputRef.current.value = "Hello World";
   }
   return (
     <div className="App" style={{ textAlign: "center" }}>
