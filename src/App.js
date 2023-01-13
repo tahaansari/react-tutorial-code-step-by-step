@@ -1,15 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
+import Contact from "./Contact";
 
 function App() {
-  const [val, setVal] = useState("");
-  function changeVal(e) {
-    setVal(e.target.value);
-    console.log(val);
-  }
   return (
     <div className="App" style={{ textAlign: "center" }}>
-      <h1>Controlled component in React</h1>
-      <input type="text" defaultValue="hello" onChange={changeVal} />
+      <h1>App.js Page - Nested Routing in React JS</h1>
+      <Contact />
     </div>
   );
 }
