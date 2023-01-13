@@ -1,17 +1,15 @@
-import React, { useRef } from "react";
-import User from "./User";
+import React, { useState } from "react";
 
 function App() {
-  let inputRef = useRef(null);
-  function changeValue() {
-    console.log("change value called");
-    // inputRef.current.value = "Hello World";
+  const [val, setVal] = useState("");
+  function changeVal(e) {
+    setVal(e.target.value);
+    console.log(val);
   }
   return (
     <div className="App" style={{ textAlign: "center" }}>
-      <h1>forwardRef in React Hook</h1>
-      <User ref={inputRef} />
-      <button onClick={changeValue}>submit</button>
+      <h1>Controlled component in React</h1>
+      <input type="text" defaultValue="hello" onChange={changeVal} />
     </div>
   );
 }

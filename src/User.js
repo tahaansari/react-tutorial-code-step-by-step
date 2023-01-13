@@ -1,9 +1,9 @@
-import React, { forwardRef } from "react";
+import React from "react";
 
-function User(props, ref) {
+function User() {
   return (
     <>
-      <input type="text" ref={ref} />
+      <input type="text" />
     </>
   );
 }
