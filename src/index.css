@@ -13,3 +13,14 @@ code {
 div {
   margin-bottom: 1rem;
 }
+
+.top-navbar {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.top-navbar li {
+  padding: 1rem;
+}
