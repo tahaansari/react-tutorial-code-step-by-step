@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
+
   const [user, SetUser] = useState("");
   const [password, SetPassword] = useState("");
   const [isError, setIsError] = useState(false);
@@ -18,6 +21,11 @@ const Login = () => {
     }
   };
 
+  function setLogin() {
+    localStorage.setItem("login", true);
+    navigate("/");
+  }
+
   return (
     <>
       <div>
@@ -31,7 +39,9 @@ const Login = () => {
             <input type="text" placeholder="Enter Password" />
           </div>
           <div>
-            <button type="button">Login</button>
+            <button onClick={() => setLogin()} type="button">
+              Login
+            </button>
           </div>
         </form>
       </div>

@@ -7,6 +7,7 @@ import Company from "./Company";
 import Channel from "./Channel";
 import Protected from "./Protected";
 import Login from "./Login";
+import PageNotFound from "./PageNotFound";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route path="company" element={<Company />} />
             <Route path="channel" element={<Channel />} />
           </Route>
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
       </Router>
     </div>

@@ -1,7 +1,8 @@
 import { Link, useNavigate } from "react-router-dom";
 
-function Home() {
+export default function Home() {
   const navigate = useNavigate();
+  console.log("home page got rendered");
   return (
     <>
       <h2>Home Page</h2>
@@ -10,5 +11,3 @@ function Home() {
     </>
   );
 }
-
-export default Home;

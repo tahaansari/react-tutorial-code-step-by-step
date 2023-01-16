@@ -1,5 +1,6 @@
 import { Link, Outlet } from "react-router-dom";
 function Contact() {
+  console.log("contact page got rendered");
   return (
     <>
       <h2>Contact Page</h2>
