@@ -8,6 +8,7 @@ import Channel from "./Channel";
 import Protected from "./Protected";
 import Login from "./Login";
 import PageNotFound from "./PageNotFound";
+import User from "./User";
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Protected Component={Home} />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/user" element={<User />} />
+          <Route path="/user/:id" element={<User />} />
           <Route path="/about" element={<Protected Component={About} />} />
           <Route path="/contact/" element={<Contact />}>
             <Route path="company" element={<Company />} />

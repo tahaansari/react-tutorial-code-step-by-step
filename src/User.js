@@ -1,11 +1,12 @@
-import React from "react";
-
+import { useParams } from "react-router-dom";
 function User() {
+  const params = useParams();
+  const { id } = params;
   return (
     <>
-      <input type="text" />
+      <h1>User component {id}</h1>
     </>
   );
 }
 
-export default React.forwardRef(User);
+export default User;
