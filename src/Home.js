@@ -39,9 +39,30 @@ export default function Home() {
       });
   }, []);
 
+  function addMobile() {
+    console.log("add mobile called");
+  }
   return (
     <>
       <h2>Home Page</h2>
+
+      <div className="form">
+        <input type="text" />
+        <br />
+        <br />
+        <textarea id="" cols="30" rows="3"></textarea>
+        <br />
+        <br />
+        <button
+          onClick={() => {
+            addMobile();
+          }}
+        >
+          add
+        </button>
+        <hr />
+      </div>
+
       {products &&
         products.map((product, index) => (
           <div key={index}>
