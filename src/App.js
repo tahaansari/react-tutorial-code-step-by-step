@@ -25,7 +25,7 @@ function App() {
             <Route path="company" element={<Company />} />
             <Route path="channel" element={<Channel />} />
           </Route>
-          <Route path="*" element={<PageNotFound />} />
+          {/* <Route path="*" element={<PageNotFound />} /> */}
         </Routes>
       </Router>
     </div>
