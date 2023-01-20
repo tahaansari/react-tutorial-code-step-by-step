@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { json, Link, useNavigate } from "react-router-dom";
 
 export default function Home() {
   const navigate = useNavigate();
-  console.log("home page got rendered");
 
   const [products, setProducts] = useState(null);
+
+  const [title, setTitle] = useState("");
+  const [desc, setDesc] = useState("");
 
   const users = [
     { id: 1, name: "Taha", email: "taha@gmail.com" },
@@ -13,20 +15,6 @@ export default function Home() {
     { id: 3, name: "Anas", email: "anas@gmail.com" },
     { id: 4, name: "Maaz", email: "maaz@gmail.com" },
   ];
-
-  // useEffect(() => {
-  //   fetch("http://localhost:3000/products", {
-  //     mathod: "POST",
-  //     contentType: "application/json",
-  //     body: {
-  //       id: 6,
-  //       title: "iPhone 11",
-  //       description: "Iphone 11 desc",
-  //       price: 650,
-  //       category: "smartphones",
-  //     },
-  //   });
-  // }, []);
 
   useEffect(() => {
     fetch("http://localhost:3000/products")
@@ -39,18 +27,48 @@ export default function Home() {
       });
   }, []);
 
-  function addMobile() {
+  const addMobile = () => {
     console.log("add mobile called");
-  }
+    const data = { id: 6, title, desc };
+    fetch("http://localhost:3000/products", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   return (
     <>
       <h2>Home Page</h2>
 
       <div className="form">
-        <input type="text" />
+        <input
+          type="text"
+          value={title}
+          onChange={(e) => {
+            setTitle(e.target.value);
+          }}
+        />
         <br />
         <br />
-        <textarea id="" cols="30" rows="3"></textarea>
+        <textarea
+          cols="30"
+          rows="3"
+          value={desc}
+          onChange={(e) => {
+            setDesc(e.target.value);
+          }}
+        ></textarea>
         <br />
         <br />
         <button
@@ -66,8 +84,10 @@ export default function Home() {
       {products &&
         products.map((product, index) => (
           <div key={index}>
+            <h2>{product.id}</h2>
             <h5>{product.title}</h5>
             <p>{product.description}</p>
+            <hr />
           </div>
         ))}
       <Link to="/about">Click Me</Link>

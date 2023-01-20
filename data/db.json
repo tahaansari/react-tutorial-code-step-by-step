@@ -34,6 +34,13 @@
       "description": "Iphone 10 desc",
       "price": 550,
       "category": "smartphones"
+    },
+    {
+      "id": 6,
+      "title": "iPhone 11",
+      "description": "Iphone 11 desc",
+      "price": 550,
+      "category": "smartphones"
     }
   ]
 }
