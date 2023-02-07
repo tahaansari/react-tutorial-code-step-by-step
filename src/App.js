@@ -9,10 +9,12 @@ import Protected from "./Protected";
 import Login from "./Login";
 import PageNotFound from "./PageNotFound";
 import User from "./User";
+import ComponentHome from "./Components/Home";
 
 function App() {
   return (
     <div className="App" style={{ textAlign: "center" }}>
+      <Home></Home>
       <Router>
         <Navbar />
         <Routes>

@@ -4,10 +4,10 @@ import { json, Link, useNavigate } from "react-router-dom";
 export default function Home() {
   const navigate = useNavigate();
 
-  const [products, setProducts] = useState(null);
+  const [mobile, setMobile] = useState(null);
 
-  const [title, setTitle] = useState("");
-  const [desc, setDesc] = useState("");
+  const [make, setTitle] = useState("");
+  const [model, setDesc] = useState("");
 
   const users = [
     { id: 1, name: "Taha", email: "taha@gmail.com" },
@@ -17,22 +17,24 @@ export default function Home() {
   ];
 
   useEffect(() => {
-    fetch("http://localhost:3000/products")
+    fetch("http://localhost:3000/Mobile")
       .then((res) => {
         return res.json();
       })
       .then((res) => {
         console.log(res);
-        setProducts(res);
+        setMobile(res);
       });
   }, []);
 
   const addMobile = () => {
     console.log("add mobile called");
-    const data = { id: 6, title, desc };
-    fetch("http://localhost:3000/products", {
+    let data = { make, model };
+    console.log(JSON.stringify(data));
+    fetch("http://localhost:3000/mobile", {
       method: "POST",
       headers: {
+        Accept: "application/json",
         "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
@@ -54,21 +56,19 @@ export default function Home() {
       <div className="form">
         <input
           type="text"
-          value={title}
+          value={make}
           onChange={(e) => {
             setTitle(e.target.value);
           }}
         />
         <br />
         <br />
-        <textarea
-          cols="30"
-          rows="3"
-          value={desc}
+        <input
+          value={model}
           onChange={(e) => {
             setDesc(e.target.value);
           }}
-        ></textarea>
+        />
         <br />
         <br />
         <button
@@ -80,13 +80,12 @@ export default function Home() {
         </button>
         <hr />
       </div>
-
-      {products &&
-        products.map((product, index) => (
+      {mobile &&
+        mobile.reverse().map((product, index) => (
           <div key={index}>
             <h2>{product.id}</h2>
-            <h5>{product.title}</h5>
-            <p>{product.description}</p>
+            <h5>{product.make}</h5>
+            <p>{product.model}</p>
             <hr />
           </div>
         ))}

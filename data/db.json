@@ -1,46 +1,29 @@
 {
-  "products": [
+  "mobile": [
     {
-      "id": 1,
-      "title": "iPhone 5",
-      "description": "Iphone 5 desc",
-      "price": 549,
-      "category": "smartphones"
+      "make": "apple",
+      "model": "iphone 7",
+      "id": 1
     },
     {
-      "id": 2,
-      "title": "iPhone 6",
-      "description": "Iphone 6 desc",
-      "price": 400,
-      "category": "smartphones"
+      "make": "samsung",
+      "model": "s10",
+      "id": 2
     },
     {
-      "id": 3,
-      "title": "iPhone 7",
-      "description": "Iphone 7 desc",
-      "price": 300,
-      "category": "smartphones"
+      "make": "oneplus",
+      "model": "6",
+      "id": 3
     },
     {
-      "id": 4,
-      "title": "iPhone 8",
-      "description": "Iphone 8 desc",
-      "price": 450,
-      "category": "smartphones"
+      "make": "one plus",
+      "model": "7",
+      "id": 4
     },
     {
-      "id": 5,
-      "title": "iPhone 10",
-      "description": "Iphone 10 desc",
-      "price": 550,
-      "category": "smartphones"
-    },
-    {
-      "id": 6,
-      "title": "iPhone 11",
-      "description": "Iphone 11 desc",
-      "price": 550,
-      "category": "smartphones"
+      "make": "",
+      "model": "",
+      "id": 5
     }
   ]
 }
